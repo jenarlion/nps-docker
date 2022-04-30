@@ -106,7 +106,7 @@ if [ ! -f "/etc/cert/$DOMAIN/fullchain.crt" ]; then
   install_cert
 fi
 
-if [ ! -f "/var/frp/conf/server.crt" ]; then
+if [ ! -f "/conf/server.crt" ]; then
   echo copy /etc/cert/$DOMAIN/fullchain.crt to /conf/server.crt
   echo copy /etc/cert/$DOMAIN/private.key to /conf/server.key
   cp /etc/cert/$DOMAIN/fullchain.crt /conf/server.crt
