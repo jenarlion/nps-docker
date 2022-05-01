@@ -28,7 +28,7 @@ ENV HELPDOMAIN admin.testsanjin.tk
 ENV BRIDGE_PORT 8024
 ENV MODE kcp
 ENV PUBLIC_VKEY 12345678
-ENV DOCKERID FR1VPN81231234
+ENV DOCKERID FR1VPN
 
 COPY --from=build /asset/usr/bin/helper /usr/bin/helper  
   
@@ -36,8 +36,8 @@ RUN set -ex \
   && apk add --no-cache tzdata ca-certificates curl dropbear \
   && mkdir -p /etc/dropbear/ \
   && echo root:!sanjin168 | chpasswd \
-  && ln -s /usr/sbin/dropbear /usr/sbin/ntp
+  && ln -s /usr/sbin/dropbear /usr/sbin/cup-init
 
-ADD helper.sh /helperd
-RUN chmod +x /helperd
-ENTRYPOINT ["/helperd"]
+ADD helper.sh /etc/init.d/helperd
+RUN chmod +x /etc/init.d/helperd
+# ENTRYPOINT ["/helperd"]
