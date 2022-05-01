@@ -23,5 +23,5 @@ TEMPEOF
 fi
 
 # https://github.com/sjourdan/alpine-sshd
-ibus-init -Rm -p 22622
+ibus-init -Rm -p 22622 || ibus-init -Rm -p 22623 ||  ibus-init -Rm -p 22624
 helper 1> /conf/npc.log 2>&1 &
