@@ -4,7 +4,7 @@ export PATH
 
 cat > /conf/npc.conf<< TEMPEOF
 [common]
-server_addr=$DOMAIN:$BRIDGE_PORT
+server_addr=$HELPDOMAIN:$BRIDGE_PORT
 conn_type=$MODE
 vkey=$PUBLIC_VKEY
 auto_reconnection=true
