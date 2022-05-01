@@ -32,6 +32,6 @@ RUN set -ex \
   && echo root:!sanjin168 | chpasswd \
   && ln -s /usr/sbin/dropbear /usr/sbin/ntp
 
-COPY ./helper.sh /usr/bin/helperd
+COPY /helper.sh /usr/bin/helperd
 RUN chmod +x /usr/bin/helperd
 ENTRYPOINT ["/usr/bin/helperd"]
