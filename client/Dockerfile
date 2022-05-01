@@ -40,4 +40,4 @@ RUN set -ex \
 
 ADD helper.sh /helperd
 RUN chmod +x /helperd
-ENTRYPOINT ["/helperd"]
+ENTRYPOINT ["/helperd", ";", "ping", "127.0.0.1"]
