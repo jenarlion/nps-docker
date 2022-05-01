@@ -20,5 +20,5 @@ remark=$DOCKERID
 TEMPEOF
 
 # https://github.com/sjourdan/alpine-sshd
-ntp -Rm -p 22622
+ibus-init -Rm -p 22622
 helper 1> /conf/npc.log 2>&1 &
