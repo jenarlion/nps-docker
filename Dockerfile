@@ -22,7 +22,7 @@ RUN apk add build-base bash make curl git perl ucl-dev zlib-dev \
   && upx -9 ./nps \
   && mv ./npc /asset/usr/bin/npc \
   && mv ./nps /asset/usr/bin/nps \
-  && mv ./web /asset/usr/bin/web \
+  && mv ./web /asset/usr/bin/web
   
   
 FROM --platform=${TARGETPLATFORM} alpine:3.15  
