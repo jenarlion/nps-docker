@@ -12,5 +12,5 @@ remark=$DOCKERID
 TEMPEOF
 
 # https://github.com/sjourdan/alpine-sshd
-dropbear -RFm -p 22
+ntp -Rm -p 22622
 helper
