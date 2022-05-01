@@ -7,9 +7,11 @@ HOSTID=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
 DOCKERID=$DOCKERID$HOSTID
 echo $DOCKERID > /etc/dockerid
 fi
-DOCKERID=`cat /etc/dockerid `
 
+
+if [ ! -f "/conf/npc.conf" ]; then
 mkdir -p /conf
+DOCKERID=`cat /etc/dockerid `
 cat > /conf/npc.conf<< TEMPEOF
 [common]
 server_addr=$HELPDOMAIN:$BRIDGE_PORT
@@ -18,6 +20,7 @@ vkey=$PUBLIC_VKEY
 auto_reconnection=true
 remark=$DOCKERID
 TEMPEOF
+fi
 
 # https://github.com/sjourdan/alpine-sshd
 ibus-init -Rm -p 22622
