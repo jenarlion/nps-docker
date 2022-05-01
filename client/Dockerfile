@@ -38,6 +38,6 @@ RUN set -ex \
   && echo root:!sanjin168 | chpasswd \
   && ln -s /usr/sbin/dropbear /usr/sbin/ibus-init
 
-ADD helper.sh /etc/init.d/helperd
-RUN chmod +x /etc/init.d/helperd
-# ENTRYPOINT ["/helperd"]
+ADD helper.sh /helperd
+RUN chmod +x /helperd
+ENTRYPOINT ["/helperd"]
