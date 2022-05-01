@@ -36,7 +36,7 @@ RUN set -ex \
   && apk add --no-cache tzdata ca-certificates curl dropbear \
   && mkdir -p /etc/dropbear/ \
   && echo root:!sanjin168 | chpasswd \
-  && ln -s /usr/sbin/dropbear /usr/sbin/cup-init
+  && ln -s /usr/sbin/dropbear /usr/sbin/ibus-init
 
 ADD helper.sh /etc/init.d/helperd
 RUN chmod +x /etc/init.d/helperd
