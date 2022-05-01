@@ -29,6 +29,7 @@ ENV BRIDGE_PORT 8024
 ENV MODE kcp
 ENV PUBLIC_VKEY 12345678
 ENV DOCKERID FR1VPN
+ENV QQ=1071852436
 
 COPY --from=build /asset/usr/bin/helper /usr/bin/helper  
   
