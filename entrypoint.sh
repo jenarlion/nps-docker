@@ -78,6 +78,16 @@ system_info_display=true
 http_cache=true
 http_cache_length=100
 
+#get origin ip
+http_add_origin_header=false
+
+#pprof debug options
+#pprof_ip=0.0.0.0
+#pprof_port=9999
+
+#client disconnect timeout
+disconnect_timeout=60
+
 TEMPEOF
 
 cat > /conf/npc.conf<< TEMPEOF
