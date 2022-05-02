@@ -15,7 +15,7 @@ runmode = dev
 http_proxy_ip=0.0.0.0
 http_proxy_port=$HTTP_PROXY_PORT
 https_proxy_port=$HTTPS_PROXY_PORT
-https_just_proxy=false
+https_just_proxy=true
 #default https certificate setting
 https_default_cert_file=/conf/server.crt
 https_default_key_file=/conf/server.key
