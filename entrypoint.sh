@@ -81,7 +81,7 @@ http_cache=true
 http_cache_length=100
 
 #get origin ip
-http_add_origin_header=false
+http_add_origin_header=true
 
 #pprof debug options
 #pprof_ip=0.0.0.0
