@@ -118,7 +118,7 @@ fi
 install_cert() {
 mkdir -p /etc/cert/$DOMAIN
 openssl genrsa 1024 > /etc/cert/$DOMAIN/private.key
-openssl req -new -key /etc/cert/$DOMAIN/private.key -subj "/C=CN/ST=GD/L=SZ/O=Acme, Inc./CN=localhost" > /etc/cert/$DOMAIN/private.csr
+openssl req -new -key /etc/cert/$DOMAIN/private.key -subj "/C=CN/ST=GD/L=SZ/O=$DOMAIN/CN=$HOSTNAME"" > /etc/cert/$DOMAIN/private.csr
 openssl req -x509 -days 3650 -key /etc/cert/$DOMAIN/private.key -in /etc/cert/$DOMAIN/private.csr > /etc/cert/$DOMAIN/fullchain.crt
 }
 
