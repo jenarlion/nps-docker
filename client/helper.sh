@@ -4,7 +4,8 @@ export PATH
 
 if [ ! -f "/etc/dockerid" ]; then
 HOSTID=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
-DOCKERID=$DOCKERID-$QQ-$HOSTID
+COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
+DOCKERID=$DOCKERID-$QQ-$COUNTRY-$HOSTID
 echo $DOCKERID > /etc/dockerid
 fi
 
