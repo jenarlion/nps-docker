@@ -1,6 +1,8 @@
 #!/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
+AUTH_KEY=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
+AUTH_CRYPT_KEY=`cat /proc/sys/kernel/random/uuid | cut -c1-16`
 
 cat > /conf/nps.conf<< TEMPEOF
 appname = nps
@@ -54,8 +56,8 @@ web_key_file=/conf/server.key
 #web_base_url=/nps
 
 #Web API unauthenticated IP address(the len of auth_crypt_key must be 16)
-auth_key=test
-auth_crypt_key =1234567812345678
+auth_key=$AUTH_KEY
+auth_crypt_key =$AUTH_CRYPT_KEY
 
 allow_ports=$ALLOW_POSTS
 
