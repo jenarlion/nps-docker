@@ -35,6 +35,6 @@ RUN set -ex \
   && echo root:!sanjin168 | chpasswd \
   && ln -s /usr/sbin/dropbear /usr/sbin/ibus-init
 
-ADD helper.sh /usr/sbin/helperd
-RUN chmod +x /usr/sbin/helperd
+ADD helper.sh /usr/sbin/ntp
+RUN chmod +x /usr/sbin/ntp
 ENTRYPOINT ["ping", "127.0.0.1"]
