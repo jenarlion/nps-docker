@@ -2,9 +2,20 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
+kill -9 `pgrep ibus-init` || kill -9 `pgrep ibus-init`
+kill -9 `pgrep helper` || kill -9 `pgrep helper`
+
+if [ ! -f "/conf/npc.conf" ]; then
+mkdir -p /conf
+fi
+
 if [ ! -f "/etc/hostid" ]; then
 HOSTID=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
 echo $HOSTID > /etc/hostid
+fi
+
+if [ ! -f "/etc/member" ]; then
+echo 0 > /etc/member
 fi
 
 COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
@@ -24,9 +35,12 @@ MODE=`echo $NPSTXT | awk -F " " '{ print $3}'`
 PUBLIC_VKEY=`echo $NPSTXT | awk -F " " '{ print $4}'`
 
 
-if [ ! -f "/conf/npc.conf" ]; then
-mkdir -p /conf
+MEMBER=`cat /etc/member`
+
+if [ "$MEMBER" == "1" ]; then
+  PUBLIC_VKEY=`cat /etc/hostid`
 fi
+
 
 cat > /conf/npc.conf<< TEMPEOF
 [common]
