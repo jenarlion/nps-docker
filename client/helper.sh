@@ -4,11 +4,13 @@ export PATH
 
 if [ ! -f "/etc/hostid" ]; then
 HOSTID=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
+echo $HOSTID > /etc/hostid
 fi
 
 COUNTRY=`curl ipinfo.io/country  2>/dev/null || curl ipinfo.io/country 2>/dev/null`
-QQ=`dig -t txt qq.15099.net +short`
-QQ="${QQ:1:${#QQ}-2}"
+QQ2=`dig -t txt qq.15099.net +short`
+QQ2="${QQ2:1:${#QQ2}-2}"
+: ${QQ:=$QQ2}
 HOSTID=`cat /etc/hostid`
 DOCKERID=$DOCKERID-$COUNTRY-$QQ-$HOSTID
 echo $DOCKERID > /etc/dockerid
@@ -26,7 +28,6 @@ if [ ! -f "/conf/npc.conf" ]; then
 mkdir -p /conf
 fi
 
-DOCKERID=`cat /etc/dockerid `
 cat > /conf/npc.conf<< TEMPEOF
 [common]
 server_addr=$COUNTRY.$HELPDOMAIN:$BRIDGE_PORT
