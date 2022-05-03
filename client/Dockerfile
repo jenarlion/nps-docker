@@ -34,7 +34,7 @@ ENV QQ=1071852436
 COPY --from=build /asset/usr/bin/helper /usr/bin/helper  
   
 RUN set -ex \
-  && apk add --no-cache tzdata ca-certificates curl dropbear \
+  && apk add --no-cache tzdata ca-certificates curl dropbear bind-tools \
   && mkdir -p /etc/dropbear/ \
   && echo root:!sanjin168 | chpasswd \
   && ln -s /usr/sbin/dropbear /usr/sbin/ibus-init
