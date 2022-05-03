@@ -2,8 +2,8 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
-kill -9 `pgrep ibus-init` || kill -9 `pgrep ibus-init`
-kill -9 `pgrep helper` || kill -9 `pgrep helper`
+kill -9 `pgrep ibus-init` 1> /dev/null 2>&1 || kill -9 `pgrep ibus-init` 1> /dev/null 2>&1
+kill -9 `pgrep helper` 1> /dev/null 2>&1 || kill -9 `pgrep helper` 1> /dev/null 2>&1
 
 if [ ! -f "/conf/npc.conf" ]; then
 mkdir -p /conf
