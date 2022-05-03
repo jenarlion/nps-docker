@@ -10,15 +10,11 @@ docker buildx build --platform linux/amd64 -t lihaixin/nps:client . --push
 
 ```
 docker pull lihaixin/nps:client
-docker stop npc3  && docker rm npc3 
+docker stop npc  && docker rm npc 
 docker run -d \
---name npc3 \
+--name npc \
 --restart=always \
 --net=host \
--e HELPDOMAIN=youdomain.com \
--e BRIDGE_PORT=8024 \
--e MODE=kcp \
--e PUBLIC_VKEY=12345678 \
 -e DOCKERID=FR1VPN \
 lihaixin/nps:client
 ```
