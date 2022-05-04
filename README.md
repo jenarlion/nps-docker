@@ -8,8 +8,8 @@ docker buildx build --platform linux/amd64 -t lihaixin/nps . --push
 
 ### 前提条件：
 
-    1、假设你使用域名youdomain.com,首先做youdomain.com -->A记录到指向你的VPS IP
-    2、做泛解析*.youdomain.com -->cname 到youdomain.com
+    1、假设你使用域名youdomain.com,首先做hostname.youdomain.com -->A记录到指向你的VPS IP
+    2、做泛解析*.youdomain.com -->cname 到hostname.youdomain.com
     3、VPS上一键运行docker环境 curl -sSL https://get.docker.com/ | sh 
 
 ### 一键部署nps-docker：
@@ -26,7 +26,7 @@ docker buildx build --platform linux/amd64 -t lihaixin/nps . --push
  
 ### 服务器
     
-    管理地址：https://hostname.youdomain.com  
+    管理地址：https://hostname.youdomain.com:8024  
     
     
 ### 客户端连接
