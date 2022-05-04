@@ -9,7 +9,7 @@ AUTH_CRYPT_KEY=`cat /proc/sys/kernel/random/uuid | cut -c1-16`
 cat > /conf/nps.conf<< TEMPEOF
 appname = nps
 #Boot mode(dev|pro)
-runmode = dev
+runmode = pro
 
 #HTTP(S) proxy port, no startup if empty
 http_proxy_ip=0.0.0.0
