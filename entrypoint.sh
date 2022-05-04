@@ -102,9 +102,9 @@ vkey=$PUBLIC_VKEY
 auto_reconnection=true
 remark=nps
 
-[web-admin]
+[nps-web-admin]
 mode=https
-host=admin$HOSTNAME.$DOMAIN
+host=$HOSTNAME.$DOMAIN
 target_addr=127.0.0.1:8080
 TEMPEOF
 
