@@ -104,7 +104,7 @@ remark=nps
 
 [web-admin]
 mode=https
-host=admin.$DOMAIN
+host=admin$HOSTNAME.$DOMAIN
 target_addr=127.0.0.1:8080
 TEMPEOF
 
