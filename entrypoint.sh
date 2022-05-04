@@ -5,6 +5,9 @@ export PATH
 create_config() {
 AUTH_KEY=`cat /proc/sys/kernel/random/uuid | cut -c1-8`
 AUTH_CRYPT_KEY=`cat /proc/sys/kernel/random/uuid | cut -c1-16`
+touch /conf/clients.json
+touch /conf/tasks.json
+touch /conf/hosts.json
 
 cat > /conf/nps.conf<< TEMPEOF
 appname = nps
