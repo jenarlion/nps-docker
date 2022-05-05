@@ -24,7 +24,7 @@ RUN apk add build-base bash make curl git perl ucl-dev zlib-dev \
   
 FROM --platform=${TARGETPLATFORM} alpine:3.15
 
-ENV DOCKERID FR1VPN
+ENV DOCKERID NPS
 
 
 COPY --from=build /asset/usr/bin/helper /usr/bin/helper  
