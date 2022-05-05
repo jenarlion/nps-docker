@@ -15,6 +15,5 @@ docker run -d \
 --name npc \
 --restart=always \
 --net=host \
--e DOCKERID=FR1VPN \
 lihaixin/nps:client
 ```
